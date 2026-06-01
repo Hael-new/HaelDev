@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="HaelDev" />
+    <title>@ViewData["Title"]</title>
+    <link rel="shortcut icon" href="~/images/ikona.ico" />
+   
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/HaelDev.styles.css" asp-append-version="true" />
+
+    @await RenderSectionAsync("CSS", required: false)
+
+
+
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <h1>Hael<span>Dev</span></h1>
+            <small>CSharp</small>
+
+            
+        </div>
+        <nav>
+            <ul>
+                <li><a asp-controller="Home" asp-action="Index">HOME</a></li>
+
+                <li><a asp-controller="Home" asp-action="Skills">SKILLS</a></li>
+
+                <li><a asp-controller="Home" asp-action="References">REFERENCES</a></li>
+
+                <li><a class="kontakt-tlacitko" asp-controller="Home" asp-action="Contact">CONTACT</a></li>
+
+               
+
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article>
+
+            <header>
+                <h1>@ViewData["Title"]</h1>
+            </header>
+
+            <section>
+                @RenderBody()
+            </section>
+        </article>
+    </main>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2026 - HaelDev - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
